@@ -3,8 +3,6 @@ import Weatherpage from "./Weatherpage";
 import TodoList from "./TodoList";
 import weatherpage from "./Weatherpage";
 
-
-
 const Home = () => {
   const [InputList, setInputlist] = useState("Buy A Apple");
   const [items, setItems] = useState([]);
