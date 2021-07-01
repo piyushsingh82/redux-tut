@@ -125,8 +125,14 @@ hr {
   padding: 20px;
   border: 1px solid #fff;
 }
-p {
+p{
+  color:black;
+}
+p.error {
   color: red;
+  background-color: #83d496;
+  padding: 10px;
+  margin: 10px 0px;
 }
 .todo_style {
   display: flex;
@@ -218,3 +224,5 @@ p {
     transform: translate3d(0, 5px, 0);
   }
 }
+
+.newList{list-style-type: none;display: flex;background-color: #fff;color:#000;margin:10px 0px;padding:0px 5px 0px;flex-direction: column;flex-flow: column;max-width:200px;}

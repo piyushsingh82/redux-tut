@@ -27,6 +27,9 @@ class Header extends React.Component {
                 <Link to="/DashBoard" className="btn">
                   Dashboard
                 </Link>
+                <Link to="/Weather" className="btn">
+                  Weatherapp
+                </Link>
                 <NavDropdown
                   title="Dropdown"
                   id="basic-nav-dropdown"

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Logout from "./components/Logout";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
+import Weatherpage from "./components/Weatherpage";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
             </Route>
             <Route path="/Dashboard">
               <Dashboard />
+            </Route>
+            <Route path="/Weather">
+              <Weatherpage />
             </Route>
           </Switch>
         </div>

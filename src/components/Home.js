@@ -1,11 +1,12 @@
-import react, { useState, useEffect } from "react";
-import Weatherpage from "./Weatherpage";
+import React, { useState } from "react";
+
 import TodoList from "./TodoList";
-import weatherpage from "./Weatherpage";
+
 
 const Home = () => {
   const [InputList, setInputlist] = useState("Buy A Apple");
   const [items, setItems] = useState([]);
+
   const itemEvent = (event) => {
     setInputlist(event.target.value);
   };
@@ -23,38 +24,12 @@ const Home = () => {
     });
     // console.log("item deleted");
   };
-  const checkplace = () => {
-    console.log("place confirmed");
-  };
 
   return (
     <div className="container">
-      <div class="row">
+      <div className="row">
         <div className="col-md-4">
-          <div class="weather_app">
-            <form class="form">
-              <input
-                type="search"
-                className="form-control"
-                onChange={checkplace}
-              /> <weatherpage />
-              <h2>
-                Location:
-                <i className="fa fas-street-view" aria-hidden="true">
-                  
-                </i>Pune
-              </h2>
-              <h4>Temp</h4>
-              <h6>
-                Min <span>2.34 Cel</span> ||Max <span>5.62 cel</span>
-              </h6>
-            </form>
-            <div className="ocean">
-              <div className="wave"></div>
-              <div className="wave"></div>
-            </div>
-          </div>
-         
+          {/* <weatherpage   /> */}
         </div>
         <div className="col-md-4"></div>
         <div className="col-md-4">

@@ -5,26 +5,28 @@ import { CardGroup, Card } from "react-bootstrap";
 function Dashboard() {
   const [posts, setPosts] = useState([]);
 
-  const getPosts = async () =>{
-    const response=  await fetch("https://jsonplaceholder.typicode.com/todos")
-    const data =  await response.json();
-   setPosts(data)
+  const getPosts = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const data = await response.json();
+    setPosts(data);
     console.log(data);
-  }
-  useEffect( () => {
-    getPosts()
-
+  };
+  useEffect(() => {
+    getPosts();
   }, []);
   return (
     <div>
       <div className="data_card">
-        {posts.map((post, index) => {
-          return (
-            <p className="bigDiv" key={index}>
-            {post.title}
-          </p>
-          )
-        })}
+        {" "}
+        <ul>
+          {posts.map((post, index) => {
+            return (
+              <li className="newList" key={index}>
+                {post.title}
+              </li>
+            );
+          })}{" "}
+        </ul>
       </div>
       <div className="col-md-12 d-none">
         <CardGroup>

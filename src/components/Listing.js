@@ -33,7 +33,7 @@ class Listing extends React.Component {
         <h1>Listing Page</h1>
         <div className="row">
           <div className="col-3">
-            <form action="" method="POST">
+            
               <div className="form-group">
                 <label htmlFor="Name"> Name </label>
                 <input
@@ -44,11 +44,9 @@ class Listing extends React.Component {
                 />
               </div>
               <div className="form-group">
-                <Button className="btn btn-secondary" onClick={(e)=>{
-                  this.handleChange(e)
-                }}>Search Now</Button>
+                <Button className="btn btn-secondary" >Search Now</Button>
               </div>
-            </form>
+               
           </div>
           <div className="col-9">
             <div className="table-responsive">
@@ -64,15 +62,18 @@ class Listing extends React.Component {
                   {userdetails
                     ? userdetails
                         .filter((val) => {
-                          if (username ===   "") {
+                          if (username === "") {
+                           
                             return val;
                           } else if (
                             val.username
                               .toLowerCase()
                               .includes(username.toLowerCase())
                           ) {
+                            console.log(val.length);
                             return val;
                           }
+                          return val;
                         })
                         .map((userdetail, index) => (
                           <tr key={index}>
