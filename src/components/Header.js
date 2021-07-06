@@ -58,7 +58,7 @@ class Header extends React.Component {
           <Route path="/Listing" component={Listing} />
           <Route path="/DashBoard" component={Dashboard} />
           <Route path="/Weather" component={Weatherpage} />
-          <Route path="/Listing" component={Listing} />
+           
         </Router>
       </div>
     );

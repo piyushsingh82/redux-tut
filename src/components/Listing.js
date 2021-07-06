@@ -35,7 +35,7 @@ class Listing extends React.Component {
           <div className="col-3">
             
               <div className="form-group">
-                <label htmlFor="Name"> Name </label>
+                <label htmlFor="Name"> Search a Name </label>
                 <input
                   type="text"
                   onChange={(e) => {
