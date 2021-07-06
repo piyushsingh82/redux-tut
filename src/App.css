@@ -120,13 +120,9 @@ hr {
   z-index: 9999;
   color: #fff;
 }
-.data_card {
-  margin-top: 100px 0px 0px 0px;
-  padding: 20px;
-  border: 1px solid #fff;
-}
-p{
-  color:black;
+
+p {
+  color: black;
 }
 p.error {
   color: red;
@@ -171,20 +167,25 @@ p.error {
 .table-responsive table tr td {
   color: #fff;
 }
- .weather_app{
+.weather_app {
   min-height: 300px;
-    border: 1px solid #fff;
-    padding: 20px;
-    margin: 10px 0px;
- }
+  border: 1px solid #fff;
+  padding: 20px;
+  margin: 10px 0px;
+}
 
 .ocean {
   position: absolute;
   width: 100%;
-  left:0px;
-  bottom:0px;
-  
-  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+  left: 0px;
+  bottom: 0px;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 254, 234, 1) 0%,
+    rgba(255, 254, 234, 1) 35%,
+    #b7e8eb 100%
+  );
   overflow: hidden;
 }
 
@@ -225,4 +226,32 @@ p.error {
   }
 }
 
-.newList{list-style-type: none;display: flex;background-color: #fff;color:#000;margin:10px 0px;padding:0px 5px 0px;flex-direction: column;flex-flow: column;max-width:200px;}
+.data_card {
+  margin: 20px;
+  padding: 20px 0px;
+  border: 1px solid #fff;
+}
+.data_card ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.newList {
+  list-style-type: none;
+  background-color: #fff;
+  color: #000;
+  margin: 10px;
+  padding: 0px ;
+  border: 1px solid #000;
+  max-width: 302px;
+  box-shadow: 2px 3px 4px 1px #4f4550;
+  flex:1 ;
+}
+.post-text{
+ 
+  padding:30px 10px;
+}
+
+

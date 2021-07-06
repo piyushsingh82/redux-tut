@@ -8,10 +8,7 @@ const Weatherpage = () => {
   const curdate = new Date().toLocaleDateString();
 
   const curtime = new Date().toLocaleTimeString();
-  const timer =()=>{
-    setTimeout(curtime,1000);
-  }
-  timer();
+ 
   
   const curHour = new Date().getHours();
   
@@ -69,7 +66,7 @@ const Weatherpage = () => {
                   <i className="fa fas-street-view" aria-hidden="true"></i>
                   {search}
                 </h2>
-                <h4 className="text-warning bigFont">Temp</h4>
+                <h4 className="text-warning bigFont">Temperature</h4>
                 <p className="text-dark bg-light ">{city.temp}</p>
                 <h6 >
                   Min <span className="text-dark bg-light">{city.temp_min}Cel</span> || Max{" "}

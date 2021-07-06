@@ -12,7 +12,7 @@ class Listing extends React.Component {
     };
   }
   componentDidMount() {
-    Axios.get("http://localhost:3001/api/allusers")
+    Axios.get("http://localhost:5001/api/allusers")
       .then((res) => {
         this.setState({ userdetails: res.data });
         console.log(res.data);

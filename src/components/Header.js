@@ -5,6 +5,8 @@ import Listing from "./Listing";
 import Homepage from "./Home";
 import About from "./About";
 import Login from "./Login";
+import Dashboard from "./Dashboard";
+import Weatherpage from "./Weatherpage";
 class Header extends React.Component {
   render() {
     return (
@@ -28,7 +30,7 @@ class Header extends React.Component {
                   Dashboard
                 </Link>
                 <Link to="/Weather" className="btn">
-                  Weatherapp
+                  Weather App
                 </Link>
                 <NavDropdown
                   title="Dropdown"
@@ -53,6 +55,9 @@ class Header extends React.Component {
           <Route path="/" exact component={Login}/>
           <Route path="/Home" component={Homepage} />
           <Route path="/About" component={About} />
+          <Route path="/Listing" component={Listing} />
+          <Route path="/DashBoard" component={Dashboard} />
+          <Route path="/Weather" component={Weatherpage} />
           <Route path="/Listing" component={Listing} />
         </Router>
       </div>

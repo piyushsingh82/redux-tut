@@ -9,6 +9,7 @@ class Login extends React.Component {
       useremail: null,
       userpasswd: null,
       login: false,
+      err: "",
       store: null,
     };
   }
@@ -21,31 +22,40 @@ class Login extends React.Component {
     // console.log('store item : '+store);
   }
   AuthorizeLogin() {
-    console.log("this state " + this.state.useremail, this.state.userpasswd);
-    fetch("http://localhost:127.0.0.1/api/login", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.state),
-    }).then((resp) => {
-      console.log("what a response", resp);
-      resp.json().then((result) => {
-        console.log("result :" + result);
-        localStorage.setItem(
-          "login",
-          JSON.stringify({
-            login: true,
-            token: result.token,
-          })
-        );
-        this.setState({ login: true });
+    if (this.state.useremail == null || this.state.username === "") {
+      alert("please enter your username ");
+      this.setState({ err: "User Name does not match our records!!" });
+    } else if (this.state.userpasswd == null || this.state.useremail === "") {
+      alert("please enter your password");
+      this.setState({ err: "Username provided is not correct ,please enter correct password" });
+    } else {
+      console.log("this state " + this.state.useremail, this.state.userpasswd);
+      fetch("http://localhost:127.0.0.1/api/login", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(this.state),
+      }).then((resp) => {
+        console.log("what a response", resp);
+        resp.json().then((result) => {
+          console.log("result :" + result);
+          localStorage.setItem(
+            "login",
+            JSON.stringify({
+              login: true,
+              token: result.token,
+            })
+          );
+          this.setState({ login: true });
+        });
       });
-    });
+    }
   }
 
   render() {
+    const {err} = this.state;
     return (
       <div className="container-fluid">
         <div className="loginpage">
@@ -83,10 +93,11 @@ class Login extends React.Component {
             >
               Submit
             </Button>
+            <div>{err?<p>{err}</p>:null}</div>
           </Form>
         </div>
 
-        <div></div>
+        
       </div>
     );
   }
