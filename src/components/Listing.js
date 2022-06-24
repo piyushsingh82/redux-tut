@@ -12,19 +12,19 @@ class Listing extends React.Component {
     };
   }
   componentDidMount() {
+    // this requires the node application to be running as it will fetch the data from it.
     Axios.get("http://localhost:5001/api/allusers")
       .then((res) => {
         this.setState({ userdetails: res.data });
         console.log(res.data);
       })
       .catch((err) => {
-        this.setState({isError : "of Error in reading api "+err})
+        this.setState({ isError: "of Error in reading api " + err });
       });
   }
   handleChange(e) {
     console.log(e.target.value);
-    this.setState({username: e.target.value})
-    
+    this.setState({ username: e.target.value });
   }
   render() {
     const { username, userdetails, isError } = this.state;
@@ -33,20 +33,18 @@ class Listing extends React.Component {
         <h1>Listing Page</h1>
         <div className="row">
           <div className="col-3">
-            
-              <div className="form-group">
-                <label htmlFor="Name"> Search a Name </label>
-                <input
-                  type="text"
-                  onChange={(e) => {
-                    this.handleChange(e);
-                  }}
-                />
-              </div>
-              <div className="form-group">
-                <Button className="btn btn-secondary" >Search Now</Button>
-              </div>
-               
+            <div className="form-group">
+              <label htmlFor="Name"> Search a Name </label>
+              <input
+                type="text"
+                onChange={(e) => {
+                  this.handleChange(e);
+                }}
+              />
+            </div>
+            <div className="form-group">
+              <Button className="btn btn-secondary">Search Now</Button>
+            </div>
           </div>
           <div className="col-9">
             <div className="table-responsive">
@@ -63,7 +61,6 @@ class Listing extends React.Component {
                     ? userdetails
                         .filter((val) => {
                           if (username === "") {
-                           
                             return val;
                           } else if (
                             val.username
@@ -87,11 +84,7 @@ class Listing extends React.Component {
               </table>
             </div>
 
-            {isError ? (
-              <p>There is some issue {isError} </p>
-            ) : (
-             null
-            )}
+            {isError ? <p>There is some issue {isError} </p> : null}
           </div>
         </div>
       </div>
