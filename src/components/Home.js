@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 import TodoList from "./TodoList";
-
+import CounterX from "./HOC/CounterX";
+import HoverCounter from "./HOC/HoverCounter";
 
 const Home = () => {
   const [InputList, setInputlist] = useState("Buy A Apple");
@@ -29,7 +30,11 @@ const Home = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-4">
-          {/* <weatherpage   /> */}
+          <div className="col-md-12">
+          <h1>Using HOC Component</h1>
+          <CounterX />
+          <HoverCounter />
+        </div>
         </div>
         <div className="col-md-4"></div>
         <div className="col-md-4">
@@ -56,7 +61,7 @@ const Home = () => {
                     key={index}
                     id={index}
                     text={itemval}
-                    onSelect={deleteItem}
+                    onDeleteThis={deleteItem}
                   />
                 );
               })}

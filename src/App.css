@@ -161,7 +161,7 @@ p.error {
   border: 1px solid #fff;
   border-radius: 2px;
   margin: 10px 0px;
-  height: 300px;
+  min-height: 410px;
 }
 
 .table-responsive table tr td {
@@ -172,6 +172,7 @@ p.error {
   border: 1px solid #fff;
   padding: 20px;
   margin: 10px 0px;
+  background-color:#4a3149;
 }
 
 .ocean {
@@ -255,3 +256,32 @@ p.error {
 }
 
 
+.flexbox-container{
+display: flex;
+}
+.container-2{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.flexbox-container > div, .container-2>div{
+  border: 1px solid rgb(10, 9, 9);
+  padding:10px;
+  
+}
+.box-1{
+  flex:2 ;
+  order:2;
+}
+.box-2{
+  flex:1;
+  order:1;
+}
+.box-3{
+  flex:2 ;
+  order:3;
+}
+.box-4,.box-5,.box-6{
+  flex: 1;
+  width:320px;
+}

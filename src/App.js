@@ -2,11 +2,11 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import "./App.css";
+
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Logout from "./components/Logout";
 // import Login from "./components/Login";
 // import Dashboard from "./components/Dashboard";
-// import Weatherpage from "./components/Weatherpage";
 
 function App() {
   return (
@@ -32,7 +32,8 @@ function App() {
           </Switch>
         </div>
       </Router>*/}
-    </div>
+      
+       </div>
   );
 }
 
